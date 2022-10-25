@@ -1,0 +1,55 @@
+.stepper-edu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 750px;
+  .heading {
+    margin-right: auto;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    span {
+      border: 1px solid #333;
+      border-radius: 21px;
+      padding: 4px 16px;
+    }
+  }
+  .step {
+    min-height: auto;
+    margin: 16px;
+    margin-left: 24px;
+    position: relative;
+    z-index: 10;
+    .header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .title {
+      margin-top: -8px;
+      font-weight: 600;
+      font-size: 15px;
+    }
+    img {
+      width: 150px;
+      object-fit: contain;
+      margin-right: 18px;
+    }
+    .body {
+      width: 80%;
+      margin-left: auto;
+      text-align: left;
+      margin-top: 14px;
+    }
+    &.hidden {
+      opacity: 0;
+
+      transform: translateX(-100%);
+      transition: all 1000ms ease;
+    }
+    &.visible {
+      opacity: 1;
+
+      transform: translateX(0%);
+    }
+  }
+}

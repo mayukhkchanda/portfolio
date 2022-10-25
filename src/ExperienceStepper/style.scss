@@ -1,0 +1,12 @@
+.stepper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .svg-line {
+    position: absolute;
+    z-index: 0;
+    left: 42px;
+    top: 100px;
+  }
+}

@@ -1,0 +1,29 @@
+.footer {
+  min-height: 2.5rem;
+  text-align: center;
+  color: inherit;
+  .footer-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.footer .footer-love {
+  animation: heartbeat 1500ms ease infinite;
+  color: #cc0000;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,35 @@
+.step {
+  min-height: 400px;
+  margin: 16px;
+  margin-left: 24px;
+  position: relative;
+  z-index: 10;
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .title {
+    margin-top: 4px;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  img {
+    width: 150px;
+    object-fit: contain;
+    margin-right: 18px;
+  }
+  .body {
+    width: 80%;
+    margin-left: auto;
+    text-align: left;
+    margin-top: 14px;
+  }
+  &.hidden {
+    opacity: 0;
+    transition: opacity 3s ease;
+  }
+  &.visible {
+    opacity: 1;
+  }
+}

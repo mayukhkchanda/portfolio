@@ -1,0 +1,100 @@
+{
+    "experience" : {
+        "heading": "Experience",
+        "amdocs": {
+            "imgPath" : "assets/images/Amdocs_logo.png",
+            "imgAlt" : "amdocs logo",
+            "title" : "March'22 - Present",
+            "body" : {
+                "title": "Software Developer",
+                "task": [
+                    "Took the complete ownership of developing the Payment Arrangements module for a Telecom giant of Thailand from design to production. Delivered assignments before schedule time and with very high code quality. Resulting in single digit defects during UAT and smooth transition to production.\n\nTech Stack: React, Redux-Saga, TypeScript, Webpack, GIT, SonarCube",
+
+                    "Developed automation pipelines using Python and Apache Airflow used for loading new offers from buisness to Oracle databases for a Telecom giant of Thailand."
+                ]
+            }
+        },
+        "cognizant": {
+            "imgPath" : "assets/images/cognizant-logo.svg",
+            "imgAlt" : "cognizant logo",
+            "title" : "Nov'20 - Feb'22",
+            "body" : {
+                "title": "Programmer Analyst",
+                "task": [
+                    "Part of Product Enhancement team for a Canadian Insurance Client, involved in all stages of SDLC, developing/enhancing features related to User stories for their frontend application.\nTech stack: React, Redux, Javascript"
+                ]
+            }
+        }
+    },
+    "education" : {
+        "heading": "Education",
+        "scrollRange": [60, 100],
+        "bTech": {
+            "imgPath" : "assets/images/ti-logo.png",
+            "imgAlt" : "techno india logo",
+            "title" : "B.Tech (8.04 CGPA)",
+            "body" : {
+                "title": "Electrical Engg. 2020",
+                "task": [
+                    "This coursework includes Microprocessors, Control Systems, Soft Computing"
+                ]
+            }
+        },
+        "class12": {
+            "imgPath" : "assets/images/gitaram.png",
+            "imgAlt" : "gitaram logo",
+            "title" : "Class 12th (84.2%)",
+            "body" : {
+                "title": "WBCHSE - Science Group",
+                "task": [
+                    "The coursework includes Physics, Biology, Chemistry, Mathematics, Computer Science, Social Sciences, English & Hindi."
+                ]
+            }
+        },
+        "class10": {
+            "imgPath" : "assets/images/gitaram.png",
+            "imgAlt" : "gitaram logo",
+            "title" : "Class 10th (89%)",
+            "body" : {
+                "title": "ICSE - General",
+                "task": [
+                    "The coursework includes Physics, Chemistry, Mathematics, Computer Science, English & Hindi."
+                ]
+            }
+        }
+    },
+    "projects": {
+        "heading": "Projects",
+        "socialMedia" :{
+            "backgroundUrl": "/assets/images/social-media-app.webp",
+            "descBrief": "A realtime social media application built using React",
+            "descTitle": "Social Media Application",
+            "linkText": "Click to know more",
+            "urlLink": "https://github.com/mayukhkchanda/React-Instagram-Clone"
+        },
+        "chattingApp" :{
+            "backgroundUrl": "/assets/images/chat-app.webp",
+            "descBrief": "A realtime chat application built using React",
+            "descTitle": "Realtime Chat App",
+            "linkText": "Click to know more",
+            "urlLink": "https://github.com/mayukhkchanda/rooms-react-app"
+        }
+    },
+    "blogs" : {
+        "heading" : "Blogs & Links",
+        "articles": [
+            {
+                "title": "Common JS Inteview Questions",
+                "link": "https://mayukhkchanda.github.io/js-interview-questions/"
+            },
+            {
+                "title": "React Dev Interview Experience",
+                "link": "https://github.com/mayukhkchanda/react-interview-experience"
+            },
+            {
+                "title": "All project links",
+                "link": "https://github.com/mayukhkchanda?tab=repositories"
+            }
+        ]
+    }
+}
