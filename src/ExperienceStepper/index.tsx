@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Heading from "./Heading";
 import Step, { Props as StepProps } from "./Step";
+// import { mapScrollPercentage } from "utils/commonUtils";
 import "./style.scss";
 
 export type Props = {
@@ -9,32 +10,21 @@ export type Props = {
   scrollRange: number[];
 };
 
-const mapScrollPercentage = (input: number, scrollRange: number[]) => {
-  let [input_start, input_end] = scrollRange; // The lowest number of the range input.
-  // The largest number of the range input.
-  let output_start = 0; // The lowest number of the range output.
-  let output_end = 100; // The largest number of the range output.
-  let output =
-    output_start +
-    ((output_end - output_start) / (input_end - input_start)) *
-      (input - input_start);
-  return output;
-};
-
 const Stepper: React.FC<Props> = (props: Props) => {
   const stepperRef = useRef<HTMLDivElement | null>(null);
-  const pathRef = useRef<SVGPathElement | null>(null);
+  // const pathRef = useRef<SVGPathElement | null>(null);
 
-  const { heading, stepProps, scrollRange } = props;
-  const svgLength = 570 * (stepProps.length - 1);
+  const { heading, stepProps /*scrollRange*/ } = props;
+  // const svgLength = 570 * (stepProps.length - 1);
 
   const callback = (entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
-      } else {
-        entry.target.classList.remove("visible");
       }
+      //  else {
+      //   entry.target.classList.remove("visible");
+      // }
     });
   };
 
