@@ -22,3 +22,8 @@ export const mapScrollPercentage = (input: number, scrollRange: number[]) => {
       (input - input_start);
   return output;
 };
+
+ export  const setRootCssVars = (varName: string, newValue: string) => {
+    const root = document.querySelector(":root") as any;
+    root?.style?.setProperty(varName, newValue);
+  }

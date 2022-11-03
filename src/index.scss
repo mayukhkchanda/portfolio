@@ -8,6 +8,10 @@
   --profile-width: 70px;
   --halo-width: 100px;
   --halo-width-max: 150px;
+  --heading-border-color: #000;
+  --text-primary: #000;
+  --link-bg-color: #bf4fbf;
+  --link-text-hover-color: #fff;
 }
 
 body {
@@ -15,6 +19,8 @@ body {
   font-family: "Roboto Mono", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #333;
+  transition: color 300ms ease;
 }
 
 body::-webkit-scrollbar {

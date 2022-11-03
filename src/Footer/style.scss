@@ -1,11 +1,14 @@
 .footer {
   min-height: 2.5rem;
   text-align: center;
-  color: inherit;
+  z-index: 1;
   .footer-text {
     display: flex;
     align-items: center;
     justify-content: center;
+    span {
+      z-index: 10;
+    }
   }
 }
 

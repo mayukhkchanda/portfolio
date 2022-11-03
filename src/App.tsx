@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AboutMe from "AboutMe";
 import ExperienceStepper from "ExperienceStepper";
 import StepBody from "ExperienceStepper/StepBody";
-import { getText } from "utils/commonUtils";
+import { getText, setRootCssVars } from "utils/commonUtils";
 import "./App.scss";
 import EducationStepper from "EducationStepper";
 import Projects from "Projects";
@@ -13,6 +13,8 @@ import Brief from "Brief";
 import Navbar from "Navbar";
 
 const App: React.FC = () => {
+  const [isBgPurple, setBgPurple] = useState(false);
+
   useEffect(() => {
     function noscroll() {
       window.scrollTo(0, 0);
@@ -27,10 +29,32 @@ const App: React.FC = () => {
     };
   }, []);
 
+  const toggleBackground = () => {
+    setBgPurple((prevState) => {
+      const newState = !prevState;
+      if (newState) {
+        // purple bg
+        document.body.style.color = "#fff";
+        setRootCssVars("--heading-border-color", "#fff");
+        setRootCssVars("--text-primary", "#fff");
+        setRootCssVars("--link-bg-color", "#fff");
+        setRootCssVars("--link-text-hover-color", "#000");
+      } else {
+        //white bg
+        document.body.style.color = "#000";
+        setRootCssVars("--heading-border-color", "#000");
+        setRootCssVars("--text-primary", "#000");
+        setRootCssVars("--link-bg-color", "#bf4fbf");
+        setRootCssVars("--link-text-hover-color", "#fff");
+      }
+      return newState;
+    });
+  };
+
   return (
     <div className="App">
       <Navbar />
-      <AboutMe />
+      <AboutMe isBgPurple={isBgPurple} toggleBackground={toggleBackground} />
       <Brief
         briefDesc={
           <>
