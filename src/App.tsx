@@ -120,7 +120,7 @@ const App: React.FC = () => {
       <Stepper
         id="education"
         svgLength={122}
-        stepDivMaxHeight={160}
+        stepDivMaxHeight={165}
         rootClassname={"education"}
         heading={getText("education.heading")}
         stepProps={[

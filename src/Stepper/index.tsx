@@ -28,6 +28,7 @@ const Stepper: React.FC<Props> = (props: Props) => {
     stepDivMaxHeight,
     id,
   } = props;
+
   const [resMaxHeight, setResMaxHeight] = useState<number>(stepDivMaxHeight);
 
   useEffect(() => {
@@ -39,9 +40,15 @@ const Stepper: React.FC<Props> = (props: Props) => {
           ?.at(0)?.clientHeight;
         if (stepDivHeight) {
           if (id === "experience") {
-            setResMaxHeight(stepDivHeight + margin - 3);
+            // setResMaxHeight(stepDivHeight + margin - 3);
+            Array.from(stepperRef.current.children)
+              .filter((n: any) => n.classList.contains("step"))
+              ?.at(0)
+              ?.classList.add("mh-570");
+            setResMaxHeight(570);
           } else if (id === "education") {
-            setResMaxHeight((stepDivHeight + 1) * 2 + margin * 5);
+            // setResMaxHeight((stepDivHeight + 1) * 2 + margin * 5);
+            setResMaxHeight(398);
           }
         }
       }
