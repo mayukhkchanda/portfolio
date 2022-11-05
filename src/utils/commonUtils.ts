@@ -12,7 +12,7 @@ export const getText = (id: string) : any => {
 getText("experience.heading")
 
 export const mapScrollPercentage = (input: number, scrollRange: number[]) => {
-  let [input_start, input_end] = scrollRange; // The lowest number of the range input.
+  let [input_start, input_end] = scrollRange; // the loweset lowest number of the range input.
   // The largest number of the range input.
   let output_start = 0; // The lowest number of the range output.
   let output_end = 100; // The largest number of the range output.
