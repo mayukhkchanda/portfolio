@@ -128,6 +128,7 @@ const AboutMe: React.FC<Props> = (props: Props) => {
         custom={height}
         className="background"
         variants={sidebar}
+        style={{ height: height }}
       />
     </>
   );

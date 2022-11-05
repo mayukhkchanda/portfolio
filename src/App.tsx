@@ -39,6 +39,7 @@ const App: React.FC = () => {
         setRootCssVars("--text-primary", "#fff");
         setRootCssVars("--link-bg-color", "#fff");
         setRootCssVars("--link-text-hover-color", "#000");
+        setRootCssVars("--stroke-fill-color", "#fff");
       } else {
         //white bg
         document.body.style.color = "#000";
@@ -46,6 +47,7 @@ const App: React.FC = () => {
         setRootCssVars("--text-primary", "#000");
         setRootCssVars("--link-bg-color", "#bf4fbf");
         setRootCssVars("--link-text-hover-color", "#fff");
+        setRootCssVars("--stroke-fill-color", "#000");
       }
       return newState;
     });
