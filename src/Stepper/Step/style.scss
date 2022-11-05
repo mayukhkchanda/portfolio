@@ -4,6 +4,8 @@
   margin-left: 24px;
   position: relative;
   z-index: 10;
+  transition: opacity 800ms ease;
+
   .header {
     display: flex;
     flex-direction: row;
@@ -27,9 +29,10 @@
   }
   &.hidden {
     opacity: 0;
-    transition: opacity 350ms ease;
+    transition: opacity 800ms ease;
   }
   &.visible {
     opacity: 1;
+    transition: opacity 800ms ease;
   }
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import Heading from "ExperienceStepper/Heading";
+import Heading from "Stepper/Heading";
 import KeyboardDoubleArrowRightOutlinedIcon from "@mui/icons-material/KeyboardDoubleArrowRightOutlined";
 import "./style.scss";
 

@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react";
-import AboutMe from "AboutMe";
-import ExperienceStepper from "ExperienceStepper";
-import StepBody from "ExperienceStepper/StepBody";
+import EmailIcon from "@mui/icons-material/Email";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import { getText, setRootCssVars } from "utils/commonUtils";
-import "./App.scss";
-import EducationStepper from "EducationStepper";
-import Projects from "Projects";
+import { imagePath, images, pdfs } from "constants/img";
 import Blogs from "Blogs";
-import Footer from "Footer";
-import { imagePath, images } from "constants/img";
 import Brief from "Brief";
 import Navbar from "Navbar";
+import Footer from "Footer";
+import AboutMe from "AboutMe";
+import Projects from "Projects";
+import Stepper from "Stepper";
+import StepBody from "Stepper/StepBody";
+import "./App.scss";
+import Contact from "Contact";
 
 const App: React.FC = () => {
   const [isBgPurple, setBgPurple] = useState(false);
@@ -79,9 +83,11 @@ const App: React.FC = () => {
           { logoUrl: imagePath + images.python_logo, name: "Python" },
         ]}
       />
-      <ExperienceStepper
+      <Stepper
+        id="experience"
+        svgLength={170}
+        stepDivMaxHeight={400}
         heading={getText("experience.heading")}
-        scrollRange={[8, 36]}
         stepProps={[
           {
             imgPath: `${process.env.PUBLIC_URL}/${getText(
@@ -111,7 +117,11 @@ const App: React.FC = () => {
           },
         ]}
       />
-      <EducationStepper
+      <Stepper
+        id="education"
+        svgLength={122}
+        stepDivMaxHeight={160}
+        rootClassname={"education"}
         heading={getText("education.heading")}
         stepProps={[
           {
@@ -179,6 +189,63 @@ const App: React.FC = () => {
       <Blogs
         heading={getText("blogs.heading")}
         articles={getText("blogs.articles")}
+      />
+      <Contact
+        heading={getText("contacts.heading")}
+        contacts={[
+          {
+            icon: <EmailIcon />,
+            text: (
+              <a
+                href="mailto:mayukhkchanda@gmail.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                mayukhkchanda@gmail.com
+              </a>
+            ),
+            key: "mayukhkchanda@gmail.com",
+          },
+          {
+            icon: <PictureAsPdfIcon />,
+            text: (
+              <a
+                href={imagePath + pdfs.resume}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Mayukh's Resume
+              </a>
+            ),
+            key: "Mayukh's Resume",
+          },
+          {
+            icon: <LinkedInIcon />,
+            text: (
+              <a
+                href="https://www.linkedin.com/in/mayukh-chanda-9a0080172/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Mayukh Kanti Chanda
+              </a>
+            ),
+            key: "Mayukh Kanti Chanda",
+          },
+          {
+            icon: <GitHubIcon />,
+            text: (
+              <a
+                href="https://github.com/mayukhkchanda"
+                target="_blank"
+                rel="noreferrer"
+              >
+                mayukhkchanda
+              </a>
+            ),
+            key: "mayukhkchanda",
+          },
+        ]}
       />
       <Footer />
     </div>

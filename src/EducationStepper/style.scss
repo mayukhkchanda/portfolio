@@ -13,43 +13,23 @@
       padding: 4px 16px;
     }
   }
+  .svg-line {
+    position: absolute;
+    z-index: 0;
+    left: 42px;
+    top: 100px;
+    max-height: 240px;
+    path {
+      fill: var(--stroke-fill-color);
+      stroke: var(--stroke-fill-color);
+    }
+  }
+
   .step {
     min-height: auto;
     margin: 16px;
     margin-left: 24px;
     position: relative;
     z-index: 10;
-    .header {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-    .title {
-      margin-top: -8px;
-      font-weight: 600;
-      font-size: 15px;
-    }
-    img {
-      width: 150px;
-      object-fit: contain;
-      margin-right: 18px;
-    }
-    .body {
-      width: 80%;
-      margin-left: auto;
-      text-align: left;
-      margin-top: 14px;
-    }
-    &.hidden {
-      opacity: 0;
-
-      transform: translateX(-100%);
-      transition: all 1000ms ease;
-    }
-    &.visible {
-      opacity: 1;
-
-      transform: translateX(0%);
-    }
   }
 }

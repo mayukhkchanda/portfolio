@@ -19,3 +19,7 @@ export const images = {
     "sass_logo": "/assets/images/sass-logo.png",
     "git_logo": "/assets/images/git-logo.png",
 };
+
+export const pdfs = {
+    "resume": "/assets/pdfs/mayukh-kanti-chanda.pdf",
+}

@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import Step, { Props as StepProps } from "Stepper/Step";
+import { motion, useScroll } from "framer-motion";
 import "./style.scss";
-import Step, { Props as StepProps } from "ExperienceStepper/Step";
 
 export type Props = {
   heading: string;
@@ -9,6 +10,11 @@ export type Props = {
 
 const EducationStepper: React.FC<Props> = (props: Props) => {
   const stepperRef = useRef<HTMLDivElement | null>(null);
+  const [animatedOnce, setAnimatedOnce] = useState(false);
+  const { scrollYProgress } = useScroll({
+    target: stepperRef,
+    offset: ["0 0.8", "end end"],
+  });
   const { heading, stepProps } = props;
 
   const callback = (entries: IntersectionObserverEntry[]) => {
@@ -23,25 +29,51 @@ const EducationStepper: React.FC<Props> = (props: Props) => {
     if (!stepperRef.current) return;
 
     const childs = [].slice.call(stepperRef.current.children) as Element[];
+    const stepChilds = childs.filter((child) =>
+      child.classList.contains("step")
+    );
 
     const observer = new IntersectionObserver(callback);
 
-    childs.slice(1).forEach((element) => {
+    // add observer to every step children except the last
+    stepChilds.slice(0, stepChilds.length - 1).forEach((element) => {
       observer.observe(element);
     });
 
+    // add visibility to the last step child only at last
+    const unsubscribe = scrollYProgress.onChange(() => {
+      const progress = scrollYProgress.get();
+      if (progress >= 0.85)
+        stepChilds.at(stepChilds.length - 1)?.classList.add("visible");
+
+      if (progress === 1) setAnimatedOnce(true);
+    });
+
     return () => {
-      childs.forEach((element) => {
+      stepChilds.slice(0, stepChilds.length - 1).forEach((element) => {
         observer.unobserve(element);
       });
+      unsubscribe();
     };
   }, [stepperRef]);
+
+  const svgLength = 122;
 
   return (
     <div className="stepper-edu" id="education" ref={stepperRef}>
       <h2 className="heading">
         <span>{heading}</span>
       </h2>
+      <svg id="progress" viewBox={`0 0 100 ${svgLength}`} className="svg-line">
+        <motion.path
+          className="path"
+          fill="black"
+          stroke="black"
+          strokeWidth="2"
+          d={`M 0 0 L 0 ${svgLength}`}
+          style={{ pathLength: animatedOnce ? svgLength : scrollYProgress }}
+        />
+      </svg>
       {stepProps.map((step) => {
         const { body, imgAlt, imgPath, title } = step;
         return (

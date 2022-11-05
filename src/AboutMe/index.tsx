@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, useRef, useState } from "react";
+import React, { MouseEventHandler } from "react";
 import { motion } from "framer-motion";
 
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
@@ -11,7 +11,6 @@ export type Props = {
 };
 
 const AboutMe: React.FC<Props> = (props: Props) => {
-  // const [isBgPurple, setBgPurple] = useState(false);
   const { isBgPurple, toggleBackground } = props;
   const height = document.body.clientHeight;
   const sidebar = {
@@ -49,15 +48,6 @@ const AboutMe: React.FC<Props> = (props: Props) => {
       },
     },
   };
-
-  // const toggleBackground = () => {
-  //   setBgPurple((prevState) => {
-  //     const newState = !prevState;
-  //     if (newState) document.body.style.color = "#fff";
-  //     else document.body.style.color = "#000";
-  //     return newState;
-  //   });
-  // };
 
   return (
     <>

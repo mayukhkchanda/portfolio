@@ -20,7 +20,7 @@ const scrollVariants: Variants = {
     opacity: 1,
     transition: {
       type: "tween",
-      duration: 0.8,
+      duration: 0.5,
       staggerChildren: 0.3,
     },
   },

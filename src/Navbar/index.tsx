@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import "./style.scss";
 
 const Navbar: React.FC = () => {
@@ -9,9 +9,7 @@ const Navbar: React.FC = () => {
     e: React.MouseEvent<HTMLAnchorElement> & { target: { href: string } }
   ) => {
     e.preventDefault();
-    // console.log(e.target.href.split("#"));
     const href = e.target.href.split("#").pop() ?? "";
-    // console.log(href);
     window.location.hash = href;
     if (inputRef?.current) {
       inputRef.current.checked = false;

@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 15rem;
+  min-height: 13rem;
   &-list {
     list-style: none;
     margin-left: 1.5rem;
@@ -38,7 +38,7 @@
     position: absolute;
     top: 1.2rem;
     left: 0;
-    background-color: var(--link-bg-color); //#bf4fbf;
+    background-color: var(--link-bg-color);
     width: 100%;
     height: 1.2rem;
     z-index: 0;
@@ -47,7 +47,7 @@
 
   &-list-item-link:hover {
     span {
-      color: var(--link-text-hover-color); //#fff;
+      color: var(--link-text-hover-color);
     }
     .link-bg {
       top: 0rem;
