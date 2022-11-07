@@ -37,7 +37,7 @@ const App: React.FC = () => {
     setBgPurple((prevState) => {
       const newState = !prevState;
       if (newState) {
-        // purple bg
+        // purple backg
         document.body.style.color = "#fff";
         setRootCssVars("--heading-border-color", "#fff");
         setRootCssVars("--text-primary", "#fff");
@@ -54,7 +54,7 @@ const App: React.FC = () => {
         );
         setRootCssVars("--navbar-li-border", "#f5f5f5");
       } else {
-        //white bg
+        //white backg
         document.body.style.color = "#000";
         setRootCssVars("--heading-border-color", "#000");
         setRootCssVars("--text-primary", "#000");
