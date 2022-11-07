@@ -13,6 +13,17 @@
   --link-bg-color: #bf4fbf;
   --link-text-hover-color: #fff;
   --stroke-fill-color: #000;
+  --navbar-full-bg-color: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.86) 90%,
+    rgba(140, 140, 140, 0.3) 100%
+  );
+  --navbar-short-bg-color: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.86) 65%,
+    rgba(140, 140, 140, 0.3) 100%
+  );
+  --navbar-li-border: #444;
 }
 
 body {

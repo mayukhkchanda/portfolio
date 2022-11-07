@@ -44,6 +44,15 @@ const App: React.FC = () => {
         setRootCssVars("--link-bg-color", "#fff");
         setRootCssVars("--link-text-hover-color", "#000");
         setRootCssVars("--stroke-fill-color", "#fff");
+        setRootCssVars(
+          "--navbar-full-bg-color",
+          "linear-gradient(180deg, rgba(179, 68, 207, 0.929) 90%, rgba(176, 176, 176, 0.3) 100%)"
+        );
+        setRootCssVars(
+          "--navbar-short-bg-color",
+          "linear-gradient(180deg, rgba(179, 68, 207, 0.929) 65%, rgba(176, 176, 176, 0.3) 100%)"
+        );
+        setRootCssVars("--navbar-li-border", "#f5f5f5");
       } else {
         //white bg
         document.body.style.color = "#000";
@@ -52,6 +61,15 @@ const App: React.FC = () => {
         setRootCssVars("--link-bg-color", "#bf4fbf");
         setRootCssVars("--link-text-hover-color", "#fff");
         setRootCssVars("--stroke-fill-color", "#000");
+        setRootCssVars(
+          "--navbar-full-bg-color",
+          "linear-gradient(180deg, rgba(0, 0, 0, 0.86) 90%, rgba(140, 140, 140, 0.3) 100%)"
+        );
+        setRootCssVars(
+          "--navbar-short-bg-color",
+          "linear-gradient(180deg, rgba(0, 0, 0, 0.86) 65%, rgba(140, 140, 140, 0.3) 100%)"
+        );
+        setRootCssVars("--navbar-li-border", "#444");
       }
       return newState;
     });

@@ -16,6 +16,15 @@ const Navbar: React.FC = () => {
     }
   };
 
+  const navbarLinks = [
+    { text: "About Me", href: "#about-me" },
+    { text: "Experience", href: "#experience" },
+    { text: "Education", href: "#education" },
+    { text: "Projects", href: "#projects" },
+    { text: "Blogs", href: "#blogs" },
+    { text: "Contacts", href: "#contact" },
+  ];
+
   return (
     <div className="nav-bar" id="nav-bar">
       <input
@@ -28,7 +37,14 @@ const Navbar: React.FC = () => {
         <div className="menu-btn" />
       </label>
       <ul className="menu">
-        <li>
+        {navbarLinks.map((link) => (
+          <li>
+            <a target="_self" href={link.href} onClick={handleLinkClick}>
+              {link.text}
+            </a>
+          </li>
+        ))}
+        {/* <li>
           <a target="_self" href="#about-me" onClick={handleLinkClick}>
             About Me
           </a>
@@ -52,7 +68,7 @@ const Navbar: React.FC = () => {
           <a target="_self" href="#blogs" onClick={handleLinkClick}>
             Blogs
           </a>
-        </li>
+        </li> */}
       </ul>
       <div className="bg" ref={navBarBgRef}></div>
     </div>
